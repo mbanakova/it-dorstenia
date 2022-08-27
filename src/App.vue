@@ -14,7 +14,7 @@ export default {
 };
 </script>
 <style lang="scss">
-@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=DM+Mono&family=Open+Sans:wght@400;700&display=swap");
 
 *,
 *::before,
@@ -27,26 +27,11 @@ html {
 }
 
 body {
-	background-color: $dark;
-	color: $white;
-	background-image: url("~@/assets/banner.png");
-	background-repeat: no-repeat;
-	background-size: cover;
-	background-position: center;
+	color: $black;
 	min-height: 100vh;
 	position: relative;
 	margin: 0;
 	font-size: 16px;
-
-	&::after {
-		position: absolute;
-		content: "";
-		top: 0;
-		left: 0;
-		width: 100%;
-		height: 100%;
-		background-color: rgba(0, 0, 0, 0.7);
-	}
 }
 
 #app {

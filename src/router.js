@@ -1,8 +1,8 @@
 
 import { createRouter, createWebHistory } from 'vue-router'
 import Home from './views/Home.vue'
-import Care from './views/Care.vue'
-import Gallery from './views/Gallery.vue'
+const Care = () => import('./views/Care')
+const Gallery = () => import('./views/Gallery')
 
 const router = createRouter({
   history: createWebHistory(process.env.BASE_URL),
@@ -24,13 +24,5 @@ const router = createRouter({
     },
   ]
 })
-// router.beforeEach(function (to, _, next) {
-//   if (to.meta.requiresAuth && !store.getters.isAuthenticated) {
-//     next('/');
-//   } else if (to.meta.requiresUnauth && store.getters.isAuthenticated) {
-//     next('/care');
-//   } else {
-//     next();
-//   }
-// });
+
 export default router

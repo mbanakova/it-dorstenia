@@ -34,16 +34,16 @@
 	position: absolute;
 	width: 6px;
 	height: 6px;
-	background: $blue;
+	background: $dark;
 	border-radius: 50%;
 	animation: lds-default 1.2s linear infinite;
 
 	&:nth-child(2n) {
-		background: $accent;
+		background: $medium;
 	}
 
 	&:nth-child(3n) {
-		background: $med-accent;
+		background: $bright;
 	}
 
 	&:nth-child(1) {

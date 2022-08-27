@@ -14,15 +14,15 @@
 </template>
 
 <script>
-// import Counter from "@/components/Counter.vue";
 export default {
 	name: "Care",
-	components: {
-		// Counter,
-	},
 };
 </script>
 <style lang="scss" scoped>
+.care {
+	background-color: $medium;
+	color: $white;
+}
 .care__title {
 	text-align: center;
 	margin-bottom: 10px;

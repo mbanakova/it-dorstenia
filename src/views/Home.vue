@@ -1,11 +1,15 @@
 <template>
-	<div class="home container">
-		<!-- <img alt="Vue logo" src="../assets/logo.png"> -->
-		<h1 class="centered">Дорогие друзья!</h1>
-		<p class="large">Если вы увлекаетесь необычными редкими растениями, а особенно суккулентами, приглашаем вас посетить комнату 615 (IT).</p>
-		<p>У нас взошёл урожай дорстений, и нам некуда его девать в таком количестве...</p>
-		<p>В наличии есть Dorstenia Crispa и Dorstenia Foetida</p>
-		<h3 class="centered warning">Торопитесь!<br />На всех может не&nbsp;хватить!</h3>
+	<div>
+		<div class="home">
+			<div class="container">
+				<!-- <img alt="Vue logo" src="../assets/logo.png"> -->
+				<h1 class="centered">Дорогие друзья!</h1>
+				<p class="large">Если вы увлекаетесь необычными редкими растениями, а особенно суккулентами, приглашаем вас посетить комнату 615 (IT).</p>
+				<p>У нас взошёл урожай дорстений, и нам некуда его девать в таком количестве...</p>
+				<p>В наличии есть Dorstenia Crispa и Dorstenia Foetida</p>
+				<h3 class="centered warning">Торопитесь!<br />На всех может не&nbsp;хватить!</h3>
+			</div>
+		</div>
 		<Counter />
 	</div>
 </template>
@@ -25,11 +29,15 @@ export default {
 
 <style lang="scss" scoped>
 .home {
+	background-color: $medium;
+	color: $white;
+	padding: 20px 0 30px;
+}
+.container {
 	display: flex;
 	flex-direction: column;
 	gap: 20px;
 }
-
 .large {
 	font-size: 18px;
 }

@@ -2,11 +2,11 @@
 	<div class="counter">
 		<h2 class="counter__title">Осталось всего:</h2>
 		<ul class="counter__list">
-			<li class="counter__item" :class="fewCrispa">
+			<li class="counter__item" :class="classCrispa">
 				<h3 class="counter__item-title">Crispa</h3>
 				<p class="counter__amount">{{ crispa }}</p>
 			</li>
-			<li class="counter__item" :class="fewFoetida">
+			<li class="counter__item" :class="classFoetida">
 				<h3 class="counter__item-title">Foetida</h3>
 				<p class="counter__amount">{{ foetida }}</p>
 			</li>
@@ -18,14 +18,13 @@
 import { mapGetters } from "vuex";
 export default {
 	name: "Counter",
-	data() {},
 	computed: {
 		...mapGetters(["crispa", "foetida"]),
-		fewCrispa() {
-			return { few: this.crispa <= 5 };
+		classCrispa() {
+			return { few: this.crispa <= 5, average: this.crispa <= 10 && this.crispa > 5 };
 		},
-		fewFoetida() {
-			return { few: this.foetida <= 5 };
+		classFoetida() {
+			return { few: this.foetida <= 5, average: this.foetida <= 10 && this.foetida > 5 };
 		},
 	},
 };
@@ -36,6 +35,9 @@ export default {
 	display: flex;
 	flex-direction: column;
 	align-items: center;
+	margin: 0 auto;
+	max-width: 740px;
+	padding: 20px;
 }
 
 .counter__title {
@@ -55,10 +57,9 @@ export default {
 .counter__item {
 	margin: 0;
 	padding: 20px;
-	background-color: rgba(255, 255, 255, 0.8);
 	color: $dark;
 	text-align: center;
-	border: 5px solid $bright;
+	border: 5px solid $medium;
 	border-radius: 8px;
 	animation: shake 1.4s infinite;
 
@@ -67,10 +68,18 @@ export default {
 	}
 
 	&.few {
-		border-color: red;
+		border-color: $few;
 
 		.counter__amount {
-			color: red;
+			color: $few;
+		}
+	}
+
+	&.average {
+		border-color: $warning;
+
+		.counter__amount {
+			color: $warning;
 		}
 	}
 }
@@ -84,7 +93,7 @@ export default {
 	margin: 0;
 	font-size: 30px;
 	font-weight: 700;
-	color: $bright;
+	color: $medium;
 }
 
 @keyframes shake {

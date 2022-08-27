@@ -20,9 +20,10 @@ export default {
 	align-items: center;
 	justify-content: center;
 	gap: 20px;
-	background-color: $medium;
+	background-color: $dark;
 	padding: 10px;
 	position: fixed;
+	z-index: 100;
 	top: 0;
 	left: 0;
 	width: 100%;
@@ -43,7 +44,7 @@ export default {
 		transform: translateX(-50%);
 		width: 0;
 		height: 2px;
-		background-color: $warning;
+		background-color: $bright;
 
 		transition: 0.3s ease-in-out all;
 	}
