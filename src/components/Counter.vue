@@ -4,11 +4,11 @@
 		<ul class="counter__list">
 			<li class="counter__item" :class="classCrispa">
 				<h3 class="counter__item-title">Crispa</h3>
-				<p class="counter__amount">{{ crispa }}</p>
+				<p class="counter__amount">{{ plants.crispa }}</p>
 			</li>
 			<li class="counter__item" :class="classFoetida">
 				<h3 class="counter__item-title">Foetida</h3>
-				<p class="counter__amount">{{ foetida }}</p>
+				<p class="counter__amount">{{ plants.foetida }}</p>
 			</li>
 		</ul>
 	</div>
@@ -18,13 +18,34 @@
 import { mapGetters } from "vuex";
 export default {
 	name: "Counter",
+	data() {
+		return {
+			plants: {
+				crispa: 0,
+				foetida: 0,
+			},
+		};
+	},
+	created() {
+		this.get();
+	},
 	computed: {
-		...mapGetters(["crispa", "foetida"]),
+		...mapGetters(["plants"]),
 		classCrispa() {
-			return { few: this.crispa <= 5, average: this.crispa <= 10 && this.crispa > 5 };
+			return { few: this.plants.crispa <= 5, average: this.plants.crispa <= 10 && this.plants.crispa > 5 };
 		},
 		classFoetida() {
-			return { few: this.foetida <= 5, average: this.foetida <= 10 && this.foetida > 5 };
+			return { few: this.plants.foetida <= 5, average: this.plants.foetida <= 10 && this.plants.foetida > 5 };
+		},
+	},
+	methods: {
+		async get() {
+			try {
+				await this.$store.dispatch("get");
+			} catch (error) {
+				console.log(error);
+			}
+			this.plants = this.$store.getters.plants;
 		},
 	},
 };
