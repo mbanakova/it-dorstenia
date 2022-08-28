@@ -32,6 +32,10 @@ export default {
 	color: $white;
 	padding: 20px 0 30px;
 }
+
+h1 {
+	font-size: 20px;
+}
 .container {
 	display: flex;
 	flex-direction: column;

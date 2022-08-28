@@ -4,11 +4,11 @@
 		<ul class="counter__list">
 			<li class="counter__item" :class="classCrispa">
 				<h3 class="counter__item-title">Crispa</h3>
-				<p class="counter__amount">{{ plants.crispa }}</p>
+				<p :class="{ counter__amount: true, zoom: isLoading }">{{ plants.crispa }}</p>
 			</li>
 			<li class="counter__item" :class="classFoetida">
 				<h3 class="counter__item-title">Foetida</h3>
-				<p class="counter__amount">{{ plants.foetida }}</p>
+				<p :class="{ counter__amount: true, zoom: isLoading }">{{ plants.foetida }}</p>
 			</li>
 		</ul>
 	</div>
@@ -16,14 +16,13 @@
 
 <script>
 import { mapGetters } from "vuex";
+
 export default {
 	name: "Counter",
 	data() {
 		return {
-			plants: {
-				crispa: 0,
-				foetida: 0,
-			},
+			plants: {},
+			isLoading: true,
 		};
 	},
 	created() {
@@ -40,12 +39,14 @@ export default {
 	},
 	methods: {
 		async get() {
+			this.isLoading = true;
 			try {
 				await this.$store.dispatch("get");
 			} catch (error) {
 				console.log(error);
 			}
 			this.plants = this.$store.getters.plants;
+			this.isLoading = !this.isLoading;
 		},
 	},
 };
@@ -82,6 +83,7 @@ export default {
 	text-align: center;
 	border: 5px solid $medium;
 	border-radius: 8px;
+	min-height: 113px;
 	animation: shake 1.4s infinite;
 
 	&:last-child {
@@ -115,8 +117,13 @@ export default {
 	font-size: 30px;
 	font-weight: 700;
 	color: $medium;
+	transition: $tr;
 }
 
+.zoom {
+	transform: scale(0.8);
+	color: $medium;
+}
 @keyframes shake {
 	0% {
 		-webkit-transform: translate(2px, 1px) rotate(0deg);

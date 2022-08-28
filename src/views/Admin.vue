@@ -35,7 +35,7 @@ export default {
 
 			try {
 				await this.$store.dispatch("set", syncData);
-				// this.$router.replace("/");
+				this.$router.replace("/");
 			} catch (error) {
 				console.log(error.message);
 			}
