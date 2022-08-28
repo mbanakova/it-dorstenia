@@ -49,13 +49,13 @@ export default {
 	height: 100%;
 }
 .gallery__item-title {
-	text-align: center;
 	color: $black;
 	font-size: 12px;
 	padding: 10px 20px;
 	border-radius: 10px;
 	top: -8px;
 	left: 20px;
+	right: 20px;
 	position: absolute;
 	z-index: 1;
 	background-color: $bright;

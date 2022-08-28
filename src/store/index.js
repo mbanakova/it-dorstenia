@@ -9,13 +9,43 @@ export default createStore({
     },
     gallery: [
       {
-        title: '5 месяцев:',
+        title: 'Раздаётся рассада в инд. стаканчиках. Далее — примеры того, как они вырастут.',
+        image: require('@/assets/g7.jpg')
+      },
+      {
+        title: 'Совсем взрослые растения:',
         image: require('@/assets/g1.jpg')
       },
       {
-        title: '2 недели:',
+        title: 'D. crispa, полугодовалая:',
         image: require('@/assets/g2.jpg')
-      },]
+      },
+      {
+        title: 'D. foetida, 9 месяцев:',
+        image: require('@/assets/g3.jpg')
+      },
+      {
+        title: 'D. foetida, цветочек с семенами:',
+        image: require('@/assets/g4.jpg')
+      },
+      {
+        title: 'D. foetida, 8 месяцев:',
+        image: require('@/assets/g5.jpg')
+      },
+      {
+        title: 'D. crispa, 1,5 месяца:',
+        image: require('@/assets/g6.jpg')
+      },
+      {
+        title: 'D. crispa, 2 недели от роду:',
+        image: require('@/assets/g8.jpg')
+      },
+      {
+        title: 'Бонусом — макушка крупным планом:',
+        image: require('@/assets/g9.jpg')
+      },
+
+    ]
   },
   actions: {
     async set(context, syncData) {
