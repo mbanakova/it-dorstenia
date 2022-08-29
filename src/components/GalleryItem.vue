@@ -56,6 +56,8 @@ export default {
 	top: -8px;
 	left: 20px;
 	right: 20px;
+	width: fit-content;
+	max-width: calc(100% - 40px);
 	position: absolute;
 	z-index: 1;
 	background-color: $bright;

@@ -30,7 +30,6 @@ export default {
 .home {
 	background-color: $medium;
 	color: $white;
-	padding: 20px 0 30px;
 }
 
 h1 {

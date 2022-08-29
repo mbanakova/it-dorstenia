@@ -41,7 +41,7 @@ export default createStore({
         image: require('@/assets/g8.jpg')
       },
       {
-        title: 'Бонусом — макушка крупным планом:',
+        title: 'После опадения листа выделяется белый сок, пахнет как дизельный трактор:',
         image: require('@/assets/g9.jpg')
       },
 

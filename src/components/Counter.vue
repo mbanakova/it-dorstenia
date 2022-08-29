@@ -31,10 +31,10 @@ export default {
 	computed: {
 		...mapGetters(["plants"]),
 		classCrispa() {
-			return { few: this.plants.crispa <= 5, average: this.plants.crispa <= 10 && this.plants.crispa > 5 };
+			return { few: this.plants.crispa <= 3, average: this.plants.crispa <= 6 && this.plants.crispa > 3 };
 		},
 		classFoetida() {
-			return { few: this.plants.foetida <= 5, average: this.plants.foetida <= 10 && this.plants.foetida > 5 };
+			return { few: this.plants.foetida <= 3, average: this.plants.foetida <= 6 && this.plants.foetida > 3 };
 		},
 	},
 	methods: {

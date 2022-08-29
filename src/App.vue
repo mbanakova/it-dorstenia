@@ -32,6 +32,7 @@ body {
 	position: relative;
 	margin: 0;
 	font-size: 16px;
+	overflow-y: scroll;
 }
 
 #app {
