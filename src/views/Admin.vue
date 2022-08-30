@@ -1,12 +1,14 @@
 <template>
-	<div class="admin container">
-		<form class="form" @submit.prevent="sync">
-			<div class="inputs">
-				<input class="input" type="number" v-model.number="plants.crispa" />
-				<input class="input" type="number" v-model.number="plants.foetida" />
-			</div>
-			<button class="button" type="submit" @click="set">set <font-awesome icon="sync" /></button>
-		</form>
+	<div class="admin">
+		<div class="container">
+			<form class="form" @submit.prevent="sync">
+				<div class="inputs">
+					<input class="input" type="number" v-model.number="plants.crispa" />
+					<input class="input" type="number" v-model.number="plants.foetida" />
+				</div>
+				<button class="button" type="submit" @click="set">set <font-awesome icon="sync" /></button>
+			</form>
+		</div>
 	</div>
 </template>
 
@@ -14,14 +16,6 @@
 import { mapGetters } from "vuex";
 export default {
 	name: "Gallery",
-	data() {
-		return {
-			plants: {
-				// crispa: 0,
-				// foetida: 0,
-			},
-		};
-	},
 	computed: {
 		...mapGetters(["plants"]),
 	},

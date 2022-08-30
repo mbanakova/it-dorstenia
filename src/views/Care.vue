@@ -24,6 +24,7 @@ export default {
 .care {
 	background-color: $medium;
 	color: $white;
+	min-height: 100vh;
 }
 .care__title {
 	text-align: center;

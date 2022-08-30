@@ -4,7 +4,7 @@
 			<BaseSpinner />
 		</div>
 		<h4 class="gallery__item-title">{{ title }}</h4>
-		<div class="gallery__img"><img :src="image" @load="showImage" /></div>
+		<div class="gallery__img"><img :src="image" @load="showImage" alt="дорстения" /></div>
 	</li>
 </template>
 

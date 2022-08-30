@@ -11,6 +11,8 @@
 				<p :class="{ counter__amount: true, zoom: isLoading }">{{ plants.foetida }}</p>
 			</li>
 		</ul>
+
+		<router-link to="/gallery" class="button">Смотреть фото</router-link>
 	</div>
 </template>
 
@@ -70,7 +72,7 @@ export default {
 .counter__list {
 	list-style-type: none;
 	padding: 0;
-	margin: 0;
+	margin: 0 auto 40px;
 	display: flex;
 	justify-content: center;
 	gap: 20px;
@@ -157,6 +159,23 @@ export default {
 	}
 	100% {
 		-webkit-transform: translate(1px, -2px) rotate(-1deg);
+	}
+}
+
+.button {
+	background-color: $dark;
+	border: none;
+	border-radius: 8px;
+	padding: 10px 25px;
+	font-size: 14px;
+	text-align: center;
+	transition: $tr;
+	min-width: 200px;
+	text-decoration: none;
+	color: $white;
+	&:hover,
+	&:active {
+		background-color: $medium;
 	}
 }
 </style>
